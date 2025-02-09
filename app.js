@@ -1,5 +1,6 @@
 let timeElement = document.querySelector(".time");
 let Start = document.querySelector(".Start");
+let startI = document.querySelector('[data-start]');
 let Stop = document.querySelector(".Stop");
 let Reset = document.querySelector(".Reset");
 
@@ -37,12 +38,15 @@ timer=  setInterval(stopwatch,1000);
 Start.addEventListener("click",()=>{
   startwatch();
   Start.disabled = true;
+  startI.style.color=" rgb(252, 185, 173)"
 })
 
 
 Stop.addEventListener("click",()=>{
   clearInterval(timer);
   Start.disabled = false;
+  startI.style.color="  rgb(247, 83, 53)"
+
 })
 
 Reset.addEventListener("click",()=>{
@@ -50,5 +54,6 @@ Reset.addEventListener("click",()=>{
   Start.disabled = false;
   [seconds,minutes,hours]=[0,0,0]
   timeElement.innerHTML="00:00:00"
+  startI.style.color="  rgb(247, 83, 53)"
 })
 
